@@ -98,9 +98,6 @@ namespace Orchard.Cms.Web
             var fullServiceCommand = host + " " + string.Join(" ", remainingArgs);
             new Win32ServiceManager()
               .CreateService(serviceName, serviceDisplayName, serviceDescription, fullServiceCommand, new Win32ServiceCredentials("NT SERVICE\\" + serviceName, null), autoStart: true, startImmediately: false, errorSeverity: ErrorSeverity.Normal);
-
-
-
             Console.WriteLine($@"Successfully registered ""{serviceDisplayName}"" (""{serviceDescription}"")");
         }
 
@@ -128,7 +125,7 @@ namespace Orchard.Cms.Web
             string serviceDisplayName = GetServiceDysplayName();
             new Win32ServiceManager()
                                     .DeleteService(serviceName);
-            Console.WriteLine("Successfully unregistered service");
+            Console.WriteLine("Service successfully unregistered");
         }
 
         private static void DisplayHelp()

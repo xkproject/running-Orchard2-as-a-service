@@ -10,13 +10,13 @@ In this repo you can find the extra files needed for executing Orchard 2 as a se
 
  Add those two files within the Orchard.Cms.Web project in your Orchard 2 solution.
 
-Next in project.json yoy need to do following changes:
+Next in project.json you need to do following changes:
 + Add these two dependencies:
 `"DasMulli.Win32.ServiceUtils": "1.0.1"`
 `"Microsoft.Extensions.Configuration.CommandLine": "1.0.0"`
-+ Add an this entry `"excludeFiles": [ "Program.cs" ]` to buildoptions -> compile to ignore default Command class.
++ Add this entry `"excludeFiles": [ "Program.cs" ]` to buildoptions -> compile to ignore default Command class.
 
-The following are the new arguments available to execute Orchard 2 through command line:");
+Arguments available to execute Orchard 2 through command line:
   --register-service	Registers and starts the program as a windows service. All additional arguments will be passed to ASP.NET Core's WebHostBuilder.
 	--service-name:<your service name>     Replace default service name (Orchard 2). Service will run using a virtual account named NT SERVICE\\<serviceName>.
     --service-display-name:<your service name>     Replace default service display-name (Orchard 2)
